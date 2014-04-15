@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dragonslayertest;
+//package MonsterFighter;
 import java.util.*;
 
 /**
@@ -27,6 +27,7 @@ public class DragonSlayerTest {
         char [][] terrainMap = new char [8][8];
         Scanner input = new Scanner(System.in);
         int enemyType;
+        int attacked;
         
         //Set up Terrain Map
         
@@ -43,14 +44,27 @@ public class DragonSlayerTest {
         
         newEnemy.printEnemy(newEnemy);
         
+        HeroClass newHero = new HeroClass();
+        
+        newHero.printHero();
+        
+        newHero.addEXP(28);
+        newHero.printHero();
+        
+        newHero.addEXP(30);
+        newHero.printHero();
+        
+        newHero.addEXP(17);
+        newHero.printHero();
+        
         //String test = newEnemy.printEnemy(newEnemy);
         //System.out.println(test);
         //System.out.println("The enemy attack power is: " + newEnemy.getAttack());
         
-        /*
-         * Commented out the majority of code to test the enemy creation class
-         * 
-         * 
+        
+         //Commented out the majority of code to test the enemy creation class
+         
+        /* 
         for(i = 0; i <= 7; i++)
         {
            if(i != 0) 
@@ -158,13 +172,18 @@ public class DragonSlayerTest {
                 terrainMap[curX][curY] = 'I';
             }
             
+            //Random number generator to see if the player is attacked.
+            attacked = numGen.nextInt(99)+ 1;
+            System.out.println("Random Attack Roll: " + attacked);
+            
+            attackCheck(attacked);
+
+            
         }
         
         System.out.println("Thanks for playing!");
-        
-        * 
-        * 
         */
+
     }
 
     
@@ -211,6 +230,20 @@ public class DragonSlayerTest {
                 
         return result;
                
+    }
+    
+    public static void attackCheck(int num)
+    {
+        int check = num;
+        
+        if(check < 26)
+        {
+            System.out.println("You have been attacked.");
+        }
+        else
+        {
+            System.out.println("You were not attacked.");
+        }
     }
 }
     
@@ -284,4 +317,3 @@ public class DragonSlayerTest {
 }
 * 
 */
-
