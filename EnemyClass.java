@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dragonslayertest;
+//package MonsterFighter;
 
 import java.util.*;
 
@@ -26,39 +26,56 @@ public class EnemyClass {
     //Holds the amount of enemy defense power.
     private int defensePower;
     
+    private String enemyName;
+    
+    private int expGained;
+    
+
+    
     
     EnemyClass(int eType)
     {
         
-        int hp, atk, def;
+        int hp, atk, def, exp;
         int type = eType;
+        String name;
     
         switch(type){
             case(1):
+                name = "Imp";
                 hp = 15;
                 atk = 2;
                 def = 1;
+                exp = 6;
                 break;
             case(2):
+                name = "Wolf";
                 hp = 25;
                 atk = 4;
                 def = 3;
+                exp = 10;
                 break;
             case(3):
+                name = "Ogre";
                 hp = 50;
                 atk = 10;
                 def = 10;
+                exp = 28;
                 break;
             default:
+                name = "UNKNOWN";
                 hp = 0;
                 atk = 0;
                 def = 0;
+                exp = 0;
                 break;      
     }
-        
+        enemyName = name;
         maxHP = hp;
         attackPower = atk;
         defensePower = def;
+        expGained = exp;
+
         
     }
     
@@ -157,12 +174,24 @@ public int getDefense()
     return defensePower;
 }
 
+public String getName()
+{
+    return enemyName;
+}
+
+public int getExp()
+{
+    return expGained;
+}
+
 public void printEnemy(EnemyClass e)
 {
     //String test;
+    System.out.println("The enemy's Name: " + e.getName());
     System.out.println("The enemy's HP: " + e.getHP());
     System.out.println("The enemy's Attack Power: " + e.getAttack());
     System.out.println("The enemy's Defense Power: " + e.getDefense());
+    System.out.println("You gained " + e.getExp() + " experience points.");
     //test = "The enemy's HP is: " + e.getHP() + "\n The enemy's Attack Power is: " +
     //        e.getAttack() + "\n The enemy's Defense Power is: " + e.getDefense();
     
