@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-//package MonsterFighter;
+package MonsterFighter;
 
 import java.util.*;
 
@@ -30,6 +30,8 @@ public class EnemyClass {
     
     private int expGained;
     
+    private String logoName;
+    
 
     
     
@@ -38,11 +40,13 @@ public class EnemyClass {
         
         int hp, atk, def, exp;
         int type = eType;
-        String name;
+        String name = "";
+        String lName = "";
     
         switch(type){
             case(1):
                 name = "Imp";
+                lName = "impguy.jpg";
                 hp = 15;
                 atk = 2;
                 def = 1;
@@ -71,6 +75,7 @@ public class EnemyClass {
                 break;      
     }
         enemyName = name;
+        logoName = lName;
         maxHP = hp;
         attackPower = atk;
         defensePower = def;
@@ -83,119 +88,125 @@ public class EnemyClass {
     
 
 
-public void setMaxHP(int enemyType)
-{
-    int hp;
-    int type = enemyType;
-    
-    switch(type){
-        case(1):
-            hp = 15;
-            break;
-        case(2):
-            hp = 25;
-            break;
-        case(3):
-            hp = 50;
-            break;
-        default:
-            hp = 0;
-            break;      
-    }
-    
-    maxHP = hp;
+    public void setMaxHP(int enemyType)
+    {
+        int hp;
+        int type = enemyType;
 
-}
+        switch(type){
+            case(1):
+                hp = 15;
+                break;
+            case(2):
+                hp = 25;
+                break;
+            case(3):
+                hp = 50;
+                break;
+            default:
+                hp = 0;
+                break;      
+        }
 
-public void setAttack(int enemyType)
-{
-    int attack = 15;
-    int type = enemyType;
-    
-    switch(type){
-        case(1):
-            attack = 1;
-            break;
-        case(2):
-            attack = 2;
-            break;
-        case(3):
-            attack = 5;
-            break;
-        default:
-            attack = 0;
-            break;      
+        maxHP = hp;
+
     }
+
+    public void setAttack(int enemyType)
+    {
+        int attack = 15;
+        int type = enemyType;
+
+        switch(type){
+            case(1):
+                attack = 1;
+                break;
+            case(2):
+                attack = 2;
+                break;
+            case(3):
+                attack = 5;
+                break;
+            default:
+                attack = 0;
+                break;      
+        }
     
      attackPower = attack;
 
 }
 
 
-public void setDefense(int enemyType)
-{
-    int defense;
-    int type = enemyType;
-    
-    switch(type){
-        case(1):
-            defense = 1;
-            break;
-        case(2):
-            defense = 2;
-            break;
-        case(3):
-            defense = 5;
-            break;
-        default:
-            defense = 0;
-            break;      
+    public void setDefense(int enemyType)
+    {
+        int defense;
+        int type = enemyType;
+
+        switch(type){
+            case(1):
+                defense = 1;
+                break;
+            case(2):
+                defense = 2;
+                break;
+            case(3):
+                defense = 5;
+                break;
+            default:
+                defense = 0;
+                break;      
+        }
+
+         defensePower = defense;
+
     }
-    
-     defensePower = defense;
 
-}
+    public int getHP()
+    {
 
-public int getHP()
-{
-    
-    return maxHP;
-}
+        return maxHP;
+    }
 
-public int getAttack()
-{
-    
-    return attackPower;
-}
+    public int getAttack()
+    {
 
-public int getDefense()
-{
-    
-    return defensePower;
-}
+        return attackPower;
+    }
 
-public String getName()
-{
-    return enemyName;
-}
+    public int getDefense()
+    {
 
-public int getExp()
-{
-    return expGained;
-}
+        return defensePower;
+    }
 
-public void printEnemy(EnemyClass e)
-{
-    //String test;
-    System.out.println("The enemy's Name: " + e.getName());
-    System.out.println("The enemy's HP: " + e.getHP());
-    System.out.println("The enemy's Attack Power: " + e.getAttack());
-    System.out.println("The enemy's Defense Power: " + e.getDefense());
-    System.out.println("You gained " + e.getExp() + " experience points.");
-    //test = "The enemy's HP is: " + e.getHP() + "\n The enemy's Attack Power is: " +
-    //        e.getAttack() + "\n The enemy's Defense Power is: " + e.getDefense();
-    
-    //return test;
-}
+    public String getName()
+    {
+        return enemyName;
+    }
+
+    public int getExp()
+    {
+        return expGained;
+    }
+
+    public void printEnemy(EnemyClass e)
+    {
+        //String test;
+        System.out.println("The enemy's Name: " + e.getName());
+        System.out.println("The enemy's HP: " + e.getHP());
+        System.out.println("The enemy's Attack Power: " + e.getAttack());
+        System.out.println("The enemy's Defense Power: " + e.getDefense());
+        System.out.println("You gained " + e.getExp() + " experience points.");
+        //test = "The enemy's HP is: " + e.getHP() + "\n The enemy's Attack Power is: " +
+        //        e.getAttack() + "\n The enemy's Defense Power is: " + e.getDefense();
+
+        //return test;
+    }
+
+
+    public String getLogo()
+    {
+        return logoName;
+    }
 
 }
