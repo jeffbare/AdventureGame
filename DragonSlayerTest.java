@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-//package MonsterFighter;
+package MonsterFighter;
 import java.util.*;
 
 /**
@@ -35,6 +35,8 @@ public class DragonSlayerTest {
         char grass = 'G';
         char water = 'W';
         char mountain = 'M';
+       
+        //Testing Enemy and Hero Creation Classes and methods.
         
         Random numGen = new Random();
         
@@ -56,6 +58,13 @@ public class DragonSlayerTest {
         
         newHero.addEXP(17);
         newHero.printHero();
+        
+        
+        //Lines to test the new Map Creation Class and it's methods
+        
+        MapBuilder map = new MapBuilder();
+        
+        map.printMap();
         
         //String test = newEnemy.printEnemy(newEnemy);
         //System.out.println(test);
