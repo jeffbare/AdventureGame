@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+package MonsterFighter;
 import java.util.*;
 /**
  *
@@ -23,17 +24,25 @@ public class HeroClass {
     
     HeroClass()
     {
-     Scanner input = new Scanner(System.in);
-     System.out.println("Please enter the name of your Hero: ");
-     name = input.next();
-     maxHP = 40;
-     currentHP = maxHP;
-     attackPower = 10;
-     defensePower = 8;
-     expPoints = 0;
-     levelUpPoints = 50;
-     level = 0;
+        String tempName;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please enter the name of your Hero: ");
+        tempName = input.next();
+        tempName = tempName.substring(0,4);
+        name = tempName.toUpperCase();
+        maxHP = 40;
+        currentHP = maxHP;
+        attackPower = 10;
+        defensePower = 8;
+        expPoints = 0;
+        levelUpPoints = 50;
+        level = 0;
      
+    }
+    
+    public String getName()
+    {
+        return name;
     }
     
     public void setHP(int damage)
