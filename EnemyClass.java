@@ -32,6 +32,8 @@ public class EnemyClass {
     
     private String logoName;
     
+    private int hp;
+    
 
     
     
@@ -54,6 +56,7 @@ public class EnemyClass {
                 break;
             case(2):
                 name = "Wolf";
+                lName = "wolfguy.jpg";
                 hp = 25;
                 atk = 4;
                 def = 3;
@@ -166,6 +169,12 @@ public class EnemyClass {
 
         return maxHP;
     }
+    
+    public void setHP(int i)
+    {
+        int newHP = i;
+        hp = newHP;
+    }
 
     public int getAttack()
     {
@@ -207,6 +216,15 @@ public class EnemyClass {
     public String getLogo()
     {
         return logoName;
+    }
+    
+    public int attack(EnemyClass e)
+    {
+        int damage;
+        
+        damage = e.getAttack();
+        
+        return damage;
     }
 
 }
