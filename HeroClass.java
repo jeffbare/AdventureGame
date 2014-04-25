@@ -20,7 +20,7 @@ public class HeroClass {
     private int expPoints;
     private int levelUpPoints;
     private int level;
-    
+    private Random num;
     
     HeroClass()
     {
@@ -28,7 +28,15 @@ public class HeroClass {
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter the name of your Hero: ");
         tempName = input.next();
+        int length = tempName.length();
+        if (length < 4)
+        {
+            //Do Nothing
+        }
+        else
+        {
         tempName = tempName.substring(0,4);
+        }
         name = tempName.toUpperCase();
         maxHP = 40;
         currentHP = maxHP;
@@ -37,7 +45,28 @@ public class HeroClass {
         expPoints = 0;
         levelUpPoints = 50;
         level = 0;
+        
+        Random gen = new Random();
      
+    }
+    
+    public int attack()
+    {
+        int damage;
+        Random num = new Random();
+        //System.out.println("Begin Method");
+        int atkPwr = getAtkPwr();
+        //System.out.println("Attack Power: " + atkPwr);
+        damage = num.nextInt(4)+ 1;
+        
+        damage = damage + (int)(Math.floor(damage * (2 / atkPwr)));
+        //System.out.println("Damage Dealt: " + damage);
+        return damage;      
+    }
+    
+    public int getAtkPwr()
+    {
+        return attackPower;
     }
     
     public String getName()
