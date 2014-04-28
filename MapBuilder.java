@@ -99,5 +99,33 @@ public class MapBuilder {
         return terrain;
 
     }
+    
+    public int moveNorth()
+    {
+        int terrainType = 0;
+        
+        return terrainType;
+    }
+    
+    public int moveEast()
+    {
+        int terrainType = 0;
+        
+        return terrainType;
+    }
+    
+    public int moveSouth()
+    {
+        int terrainType = 0;
+        
+        return terrainType;
+    }
+    
+    public int moveWest()
+    {
+        int terrainType = 0;
+        
+        return terrainType;
+    }
 
 }
