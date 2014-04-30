@@ -20,7 +20,9 @@ public class HeroClass {
     private int expPoints;
     private int levelUpPoints;
     private int level;
+    private int potionCount;
     private Random num;
+    
     
     HeroClass()
     {
@@ -45,6 +47,7 @@ public class HeroClass {
         expPoints = 0;
         levelUpPoints = 50;
         level = 0;
+        potionCount = 3;
         
         Random gen = new Random();
      
@@ -74,7 +77,7 @@ public class HeroClass {
         return name;
     }
     
-    public void setHP(int damage)
+    public void damageHP(int damage)
     {
         int hp = getHP();
         currentHP = hp - damage;
@@ -83,6 +86,23 @@ public class HeroClass {
     public int getHP()
     {
         return currentHP;
+    }
+    
+    public void setHP(int i)
+    {
+        currentHP =  i;
+        
+    }
+    
+    public void setHP()
+    {
+        //To set HP as max amount.
+        currentHP = maxHP;
+    }
+    
+    public int getMaxHP()
+    {
+        return maxHP;
     }
     
     public void addEXP(int exp)
@@ -130,5 +150,39 @@ public class HeroClass {
         System.out.println("Your current HP is: " + currentHP);
         System.out.println("Your total EXP Points: " + expPoints);
         System.out.println("You need " + (levelUpPoints - getExp()) + " to level up.");
+    }
+    
+    public int usePotion()
+    {
+        
+        int healAmount = 0;
+        int remainingPots = getPotionCount();
+        Random num = new Random();
+        //System.out.println("Starting UsePotion Method.");
+        if(remainingPots > 0)
+        {
+            healAmount = num.nextInt(8) + 5;
+            decreasePotionCount();
+        }
+        else
+        {
+            System.out.println("You don't have enough Potions.");
+        }
+        
+        //System.out.println("Ending UsePotion Method.");
+        return healAmount;
+    }
+    
+    public int getPotionCount()
+    {
+        return potionCount;
+    }
+    
+    public void decreasePotionCount()
+    {
+        //System.out.println("Starting DecreasePotion Method.");
+        potionCount = potionCount - 1;
+        //System.out.println("You have " + getPotionCount() + " potions remaining.");
+        //System.out.println("Ending DecreasePotion Method.");
     }
 }
