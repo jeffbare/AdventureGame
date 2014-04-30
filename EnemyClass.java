@@ -222,7 +222,7 @@ public class EnemyClass {
     {
         int damage;
         
-        damage = e.getAttack();
+        damage = (int)(e.getAttack() * .8);
         
         return damage;
     }
