@@ -100,32 +100,34 @@ public class MapBuilder {
 
     }
     
-    public int moveNorth()
+    public char moveNorth()
     {
-        int terrainType = 0;
+        char terrainType = 'a';
         
         return terrainType;
     }
     
-    public int moveEast()
+    public char moveEast()
     {
-        int terrainType = 0;
+        char terrainType = 'a';
         
         return terrainType;
     }
     
-    public int moveSouth()
+    public char moveSouth()
     {
-        int terrainType = 0;
+        char terrainType = 'a';
         
         return terrainType;
     }
     
-    public int moveWest()
+    public char moveWest()
     {
-        int terrainType = 0;
+        char terrainType = 'a';
         
         return terrainType;
     }
+    
+    
 
 }
