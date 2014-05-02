@@ -386,20 +386,24 @@ public class GUI_Frame extends javax.swing.JFrame {
         ImageIcon newi, newi2;
         
         //eType = CreateEnemy();
+        System.out.println("Random enemy number: " + eType);
         
         if(eType == 1)
         {
             newi = new ImageIcon("impguy.jpg");
+            newEnemy = imp;
             jButton5.setIcon(newi);
         }
         else if(eType == 2)
         {
             newi = new ImageIcon("wolfguy.jpg");
+            newEnemy = wolf;
             jButton5.setIcon(newi);            
         }
         else if(eType == 3)
         {
             newi = new ImageIcon("ogreguy.jpg");
+            newEnemy = ogre;
             jButton5.setIcon(newi);            
         }
         
@@ -712,6 +716,8 @@ public class GUI_Frame extends javax.swing.JFrame {
             new GUI_Frame().setVisible(true);
         });
         
+
+        
        
         
         
@@ -802,12 +808,15 @@ public class GUI_Frame extends javax.swing.JFrame {
     HeroClass newHero = new HeroClass();
     int eType = num.nextInt(2) + 1;
     //int eType = 3;
-    EnemyClass newEnemy = new EnemyClass(eType); //Random Enenmy
-    //EnemyClass newEnemy = new EnemyClass(1);                  //Test the Imp Enemy
-    //EnemyClass newEnemy = new EnemyClass(2);                    //Test the Wolf Enemy
-    //EnemyClass newEnemy = new EnemyClass(3);                  //Test the Ogre Enemy
+    //EnemyClass newEnemy = new EnemyClass(eType);       //Random Enenmy
+    EnemyClass newEnemy;
+    EnemyClass imp = new EnemyClass(1);                  //Test the Imp Enemy
+    EnemyClass wolf = new EnemyClass(2);                 //Test the Wolf Enemy
+    EnemyClass ogre = new EnemyClass(3);                 //Test the Ogre Enemy
     int turnCounter;
     int terrain = num.nextInt(2) + 1;
+    boolean attacked = false;
+    MapBuilder map = new MapBuilder();
     
     
     /*
