@@ -19,12 +19,15 @@ public class MapBuilder {
     int currPost;
     int lastPost;
     char[][] newMap;
+    char currTerrain;
+    int curX;
+    int curY;
     
     MapBuilder()
     {
 
-        int i =0;
-        int j =0;
+        int i;
+        int j;
         char terrain;
         //char newMap[][];
         newMap = new char[8][8];
@@ -59,7 +62,7 @@ public class MapBuilder {
             terrainChar = 'G';
                 break;
             case 2:
-                terrainChar = 'W';
+                terrainChar = 'F';
                 break;
             case 3:
                 terrainChar = 'M';
@@ -73,8 +76,8 @@ public class MapBuilder {
     
     public void printMap()
     {
-        int i = 0;
-        int j = 0;
+        int i;
+        int j;
         //char [][]newMap = map;
         
         for(i = 0; i <= 7; i++)
@@ -90,12 +93,15 @@ public class MapBuilder {
                 System.out.print("[" + getTerrain(i,j) + "]");
             }
         }
+        System.out.println(); //Add blank line after map output.
+        System.out.println();
     }
     
     public char getTerrain(int x, int y)
     {
         //System.out.println("ERROR in getTerrain method X = " + x + " Y = " + y);
         char terrain = newMap[x][y];
+        //System.out.println("Current Terrain: " + terrain);
         return terrain;
 
     }
@@ -103,6 +109,21 @@ public class MapBuilder {
     public char moveNorth()
     {
         char terrainType = 'a';
+
+        setTerrain(curX, curY, currTerrain);
+        
+        if((curX - 1) > -1)
+        {
+            currTerrain = newMap[curX - 1][curY];
+            terrainType = newMap[curX][curY];
+            newMap[curX - 1][curY] = 'I';
+            curX = curX - 1;
+            //terrainType = newMap[curX][curY];
+        }
+        else
+        {
+            return 'e';
+        }
         
         return terrainType;
     }
@@ -118,6 +139,21 @@ public class MapBuilder {
     {
         char terrainType = 'a';
         
+        setTerrain(curX, curY, currTerrain);
+        
+        if((curX - 1) < 8)
+        {
+            currTerrain = newMap[curX + 1][curY];
+            terrainType = newMap[curX][curY];
+            newMap[curX + 1][curY] = 'I';
+            curX = curX + 1;
+            //terrainType = newMap[curX][curY];
+        }
+        else
+        {
+            return 'e';
+        }
+        
         return terrainType;
     }
     
@@ -128,6 +164,20 @@ public class MapBuilder {
         return terrainType;
     }
     
-    
+    public void setPost(int x, int y)
+    {  
+        //Save inital terrain type
+        
+        curX = x;
+        curY = y;
+        currTerrain = newMap[x][y];
+        
+        //move player cursor to terrain.
+        newMap[x][y] = 'I';
+    }
 
+    public void setTerrain(int x, int y, char t)
+    {
+        newMap[x][y] = t;
+    }
 }
