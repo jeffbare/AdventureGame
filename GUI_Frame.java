@@ -246,6 +246,11 @@ public class GUI_Frame extends javax.swing.JFrame {
         jButton3.setText("E");
 
         jButton4.setText("S");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("N");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -363,6 +368,31 @@ public class GUI_Frame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
+        
+        char newTerrain= map.moveNorth();
+        ImageIcon newi2;
+        switch(newTerrain)
+        {
+            case 'G':
+                newi2 = new ImageIcon("tallgrass.jpg");
+                jButton7.setIcon(newi2);
+                break;
+            case 'F':
+                newi2 = new ImageIcon("forrest.jpg");
+                jButton7.setIcon(newi2);
+                break;
+            case 'M':
+                newi2 = new ImageIcon("mountains.jpg");
+                jButton7.setIcon(newi2);
+                break;
+            case 'e':
+                jTextArea1.append("You cannot move farther North!\n");
+                break;        
+        }
+        
+        System.out.println("Returned Terrrain: " + newTerrain);
+        map.printMap();
+
     }                                        
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
@@ -383,7 +413,20 @@ public class GUI_Frame extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
+        //Start Button Stuff
+        
         ImageIcon newi, newi2;
+        
+        int tempX = num.nextInt(6) + 1;
+        int tempY = num.nextInt(6) + 1;
+        
+        map.printMap();             //Print map before change
+        
+        //map.setPost(tempX, tempY);  //Set starting position
+        map.setPost(6,6);
+        terrain = map.getTerrain(6, 6);
+        
+        map.printMap(); 
         
         //eType = CreateEnemy();
         System.out.println("Random enemy number: " + eType);
@@ -409,15 +452,15 @@ public class GUI_Frame extends javax.swing.JFrame {
         
         switch(terrain)
         {
-            case 1:
+            case 'G':
                 newi2 = new ImageIcon("tallgrass.jpg");
                 jButton7.setIcon(newi2);
                 break;
-            case 2:
+            case 'F':
                 newi2 = new ImageIcon("forrest.jpg");
                 jButton7.setIcon(newi2);
                 break;
-            case 3:
+            case 'M':
                 newi2 = new ImageIcon("mountains.jpg");
                 jButton7.setIcon(newi2);
                 break;
@@ -444,6 +487,7 @@ public class GUI_Frame extends javax.swing.JFrame {
         jTextField4.setText(String.valueOf(eHP));
         
         turnCounter = 0;
+            //Print map with Player in field.
     }                                        
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
@@ -684,6 +728,37 @@ public class GUI_Frame extends javax.swing.JFrame {
 
     }                                        
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        
+        //Move South Button
+        
+        char newTerrain= map.moveSouth();
+        ImageIcon newi2;
+        switch(newTerrain)
+        {
+            case 'G':
+                newi2 = new ImageIcon("tallgrass.jpg");
+                jButton7.setIcon(newi2);
+                break;
+            case 'F':
+                newi2 = new ImageIcon("forrest.jpg");
+                jButton7.setIcon(newi2);
+                break;
+            case 'M':
+                newi2 = new ImageIcon("mountains.jpg");
+                jButton7.setIcon(newi2);
+                break;
+            case 'e':
+                jTextArea1.append("You cannot move farther South!\n");
+                break;        
+        }
+        
+        System.out.println("Returned Terrrain: " + newTerrain);
+        map.printMap();
+        
+    }                                        
+
     /**
      * @param args the command line arguments
      */
@@ -814,7 +889,7 @@ public class GUI_Frame extends javax.swing.JFrame {
     EnemyClass wolf = new EnemyClass(2);                 //Test the Wolf Enemy
     EnemyClass ogre = new EnemyClass(3);                 //Test the Ogre Enemy
     int turnCounter;
-    int terrain = num.nextInt(2) + 1;
+    int terrain;// = num.nextInt(2) + 1;
     boolean attacked = false;
     MapBuilder map = new MapBuilder();
     
