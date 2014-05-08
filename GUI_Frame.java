@@ -242,8 +242,18 @@ public class GUI_Frame extends javax.swing.JFrame {
         });
 
         jButton2.setText("W");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("E");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("S");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -423,8 +433,9 @@ public class GUI_Frame extends javax.swing.JFrame {
         map.printMap();             //Print map before change
         
         //map.setPost(tempX, tempY);  //Set starting position
-        map.setPost(6,6);
-        terrain = map.getTerrain(6, 6);
+        map.setPost(2,2);
+        //terrain = map.getTerrain(6, 6);
+        terrain = map.getTerrain();
         
         map.printMap(); 
         
@@ -495,82 +506,7 @@ public class GUI_Frame extends javax.swing.JFrame {
     }                                           
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-        //This is the ATTACK button
-        /*
-        System.out.println("Using the attack button.");
-        
-        int eStartHP = newEnemy.getHP();
-        int hStartHP = newHero.getHP();
-        int hDamage = 0;
-        int eDamage = 0;
-        int hHP = hStartHP;
-        int eHP = eStartHP;
-        int hAttack, eAttack;
-        
-        if(turnCounter == 0)
-        {
-            hAttack = newHero.attack();
-            jTextField5.setText(String.valueOf(hAttack)); 
-            
-            eAttack = newEnemy.attack(newEnemy);
-            
-            eHP = eHP - hAttack;
-            hHP = hHP - eAttack;
-            jTextField1.setText(String.valueOf(hHP));
-            jTextField4.setText(String.valueOf(eHP));
-            
-            //System.out.println("Damage dealt by Enemy: " + eAttack);
-            //System.out.println("Hero HP: " + hHP);
-            //System.out.println("Damage dealt by Hero: " + hAttack);
-            //System.out.println("Enemy HP: " + eHP);
-            turnCounter++;
-        }
-        else if(turnCounter > 0 && hHP > 0 && eHP > 0)
-        {
-            if(hHP > 0 && eHP > 0)
-            {
-                eHP = (int)(Float.parseFloat(jTextField4.getText()));
-                hHP = (int)(Float.parseFloat(jTextField1.getText()));
-                
-                hAttack = newHero.attack();
-                eAttack = newEnemy.attack(newEnemy);
-                
-                eHP = eHP - hAttack;
-                hHP = hHP - eAttack;
-                
-                jTextField5.setText(String.valueOf(hAttack)); 
-                jTextField1.setText(String.valueOf(hHP));
-                jTextField4.setText(String.valueOf(eHP));
-                
-                turnCounter++;
-                
-                System.out.println("Number of turns: " + turnCounter);
-            }
-
-        }
-        
-        if(hHP <= 0)
-        {
-            jTextArea1.append("The Hero is dead!");
-        }
-        else if(eHP <= 0)
-        {
-            jTextArea1.append("The enemy is dead!");
-        }
- 
-        
-        /*
-        if(eHP <= 0)
-        {
-            System.out.println("The Enemy is dead!");
-        }
-        else if(hHP <= 0)
-        {
-            System.out.println("You have died!");
-        }
-        */
-
+       
     }                                        
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {                                            
@@ -757,6 +693,66 @@ public class GUI_Frame extends javax.swing.JFrame {
         System.out.println("Returned Terrrain: " + newTerrain);
         map.printMap();
         
+    }                                        
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        // Move East Button
+        
+                
+        char newTerrain= map.moveEast();
+        ImageIcon newi2;
+        switch(newTerrain)
+        {
+            case 'G':
+                newi2 = new ImageIcon("tallgrass.jpg");
+                jButton7.setIcon(newi2);
+                break;
+            case 'F':
+                newi2 = new ImageIcon("forrest.jpg");
+                jButton7.setIcon(newi2);
+                break;
+            case 'M':
+                newi2 = new ImageIcon("mountains.jpg");
+                jButton7.setIcon(newi2);
+                break;
+            case 'e':
+                jTextArea1.append("You cannot move farther East!\n");
+                break;        
+        }
+        
+        System.out.println("Returned Terrrain: " + newTerrain);
+        map.printMap();
+
+    }                                        
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        // Move West Button
+        
+        char newTerrain= map.moveWest();
+        ImageIcon newi2;
+        switch(newTerrain)
+        {
+            case 'G':
+                newi2 = new ImageIcon("tallgrass.jpg");
+                jButton7.setIcon(newi2);
+                break;
+            case 'F':
+                newi2 = new ImageIcon("forrest.jpg");
+                jButton7.setIcon(newi2);
+                break;
+            case 'M':
+                newi2 = new ImageIcon("mountains.jpg");
+                jButton7.setIcon(newi2);
+                break;
+            case 'e':
+                jTextArea1.append("You cannot move farther West!\n");
+                break;        
+        }
+        
+        System.out.println("Returned Terrrain: " + newTerrain);
+        map.printMap();
     }                                        
 
     /**
