@@ -57,8 +57,26 @@ public class MapBuilder {
     public static char terrain()
     {
         Random numGen = new Random();
-        int num = numGen.nextInt(3) + 1;
+        int num = numGen.nextInt(99) + 1;
         char terrainChar;
+        
+        if(num >= 50)
+        {
+            //create grass land tile
+            num = 1;
+        }
+        else if(num < 50 && num >= 20)
+        {
+            num = 2;
+        }
+        else if(num < 20 && num >= 3)
+        {
+            num = 3;
+        }
+        else if(num < 3)
+        {
+            num = 4;
+        }
         
         switch(num)
         {
@@ -70,6 +88,9 @@ public class MapBuilder {
                 break;
             case 3:
                 terrainChar = 'M';
+                break;
+            case 4:    
+                terrainChar = 'T';
                 break;
             default:
                 terrainChar = 'E';
