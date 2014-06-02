@@ -323,6 +323,7 @@ public class GUI_Frame extends javax.swing.JFrame {
             }
         });
 
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INVENTORY", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.ABOVE_TOP));
         jPanel3.setOpaque(false);
 
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MonsterFighter/Images/key.jpg"))); // NOI18N
@@ -434,7 +435,7 @@ public class GUI_Frame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -496,6 +497,7 @@ public class GUI_Frame extends javax.swing.JFrame {
         ImageIcon newi, newi2;
         
         jPanel3.setVisible(showINV);
+        jButton12.setVisible(false);
         
         int tempX = num.nextInt(6) + 1;
         int tempY = num.nextInt(6) + 1;
@@ -722,6 +724,12 @@ public class GUI_Frame extends javax.swing.JFrame {
             jTextField2.setText(String.valueOf(newHero.getExp()));
             jTextArea1.append("The enemy is dead!\n");
             jTextArea1.append("You gained " + newEnemy.getExp() + " EXP.\n");
+            
+            if(newEnemy.keyHolder())
+            {
+                newHero.foundKey();
+                jButton12.setVisible(true);
+            }
         }
  
         
