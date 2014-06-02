@@ -34,7 +34,7 @@ public class MapBuilder {
         yLength = 8;
         //char newMap[][];
         newMap = new char[xLength][yLength];
-        
+        boolean flag = false;
         
         for(i = 0; i <= xLength - 1; i++)
         {
@@ -47,11 +47,27 @@ public class MapBuilder {
            {
                terrain = terrain();
                newMap[i][j] = terrain;
+               if(terrain == 'T')
+               {
+                   flag = true;
+               }
                //System.out.print("[" + terrain + "]");
            }
             
         }
         
+        
+        Random numGen = new Random();
+        
+        int xNum = numGen.nextInt(6) + 1;
+        int yNum = numGen.nextInt(6) + 1;
+        
+        if(flag == false){
+            newMap[xNum][yNum] = 'T';
+        
+            System.out.println("Xnum: " + xNum + " Ynum: " + yNum); 
+        }
+
     }
     
     public static char terrain()
