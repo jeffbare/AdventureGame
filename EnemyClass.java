@@ -34,6 +34,7 @@ public class EnemyClass {
     
     private int hp;
     
+    private boolean key;
 
     
     
@@ -83,6 +84,7 @@ public class EnemyClass {
         attackPower = atk;
         defensePower = def;
         expGained = exp;
+        key = false;
 
         
     }
@@ -227,4 +229,23 @@ public class EnemyClass {
         return damage;
     }
 
+    
+    public boolean keyHolder()
+    {
+        boolean x = false;
+        if(key == false)
+        {
+
+            Random numGen = new Random();
+            int num = numGen.nextInt(99) + 1;
+            
+            if(num <= 15)
+            {
+                key = true;
+                x = true;
+            }
+        }
+                 
+        return x;
+    }
 }
