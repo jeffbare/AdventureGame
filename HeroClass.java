@@ -22,6 +22,7 @@ public class HeroClass {
     private int level;
     private int potionCount;
     private Random num;
+    private boolean key;
     
     
     HeroClass()
@@ -48,6 +49,7 @@ public class HeroClass {
         levelUpPoints = 50;
         level = 0;
         potionCount = 3;
+        key = false;
         
         Random gen = new Random();
      
@@ -184,5 +186,26 @@ public class HeroClass {
         potionCount = potionCount - 1;
         //System.out.println("You have " + getPotionCount() + " potions remaining.");
         //System.out.println("Ending DecreasePotion Method.");
+    }
+    
+    public void foundKey()
+    {
+        key = true;
+    }
+    
+    public boolean keyCheck()
+    {
+        boolean x;
+        if(key == true)
+        {
+            x = true;
+        }
+        else
+        {
+            x = false;
+        }
+        
+        return x;
+        
     }
 }
