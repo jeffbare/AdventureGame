@@ -445,28 +445,19 @@ public class GUI_Frame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         char newTerrain= map.moveNorth();
+        
+        String type = terrainType(newTerrain);
         ImageIcon newi2;
-        switch(newTerrain)
+        
+                
+        if(type.equals("error"))
         {
-            case 'G':
-                newi2 = new ImageIcon("tallgrass.jpg");
+            jTextArea1.append("You cannot move farther North!\n");
+        }
+        else
+        {
+            newi2 = new ImageIcon(type);
                 jButton7.setIcon(newi2);
-                break;
-            case 'F':
-                newi2 = new ImageIcon("forrest.jpg");
-                jButton7.setIcon(newi2);
-                break;
-            case 'M':
-                newi2 = new ImageIcon("mountains.jpg");
-                jButton7.setIcon(newi2);
-                break;
-            case 'T':
-                newi2 = new ImageIcon("treasure.jpg");
-                jButton7.setIcon(newi2);
-                break;
-            case 'e':
-                jTextArea1.append("You cannot move farther North!\n");
-                break;        
         }
         
         System.out.println("Returned Terrrain: " + newTerrain);
@@ -496,20 +487,19 @@ public class GUI_Frame extends javax.swing.JFrame {
         
         ImageIcon newi, newi2;
         
-        jPanel3.setVisible(showINV);
-        jButton12.setVisible(false);
+        //startGame();
+        //jPanel3.setVisible(showINV);
+        //jButton12.setVisible(hasKey);
         
-        int tempX = num.nextInt(6) + 1;
-        int tempY = num.nextInt(6) + 1;
         
-        map.printMap();             //Print map before change
+        //map.printMap();             //Print map before change
         
         //map.setPost(tempX, tempY);  //Set starting position
-        map.setPost(2,2);
+        //map.setPost(2,2);
         //terrain = map.getTerrain(6, 6);
-        terrain = map.getTerrain();
+        //terrain = map.getTerrain();
         
-        map.printMap(); 
+        //map.printMap(); 
         
         //eType = CreateEnemy();
         System.out.println("Random enemy number: " + eType);
@@ -553,6 +543,8 @@ public class GUI_Frame extends javax.swing.JFrame {
                 break;
         }
         
+        
+        /*
         int eStartHP = newEnemy.getHP();
         int hStartHP = newHero.getHP();
         
@@ -572,7 +564,7 @@ public class GUI_Frame extends javax.swing.JFrame {
         
         jTextField7.setText(String.valueOf(eName));
         jTextField4.setText(String.valueOf(eHP));
-        
+        */
         turnCounter = 0;
             //Print map with Player in field.
     }                                        
@@ -753,27 +745,16 @@ public class GUI_Frame extends javax.swing.JFrame {
         
         char newTerrain= map.moveSouth();
         ImageIcon newi2;
-        switch(newTerrain)
+       String type = terrainType(newTerrain);
+        
+        if(type.equals("error"))
         {
-            case 'G':
-                newi2 = new ImageIcon("tallgrass.jpg");
+            jTextArea1.append("You cannot move farther South!\n");
+        }
+        else
+        {
+            newi2 = new ImageIcon(type);
                 jButton7.setIcon(newi2);
-                break;
-            case 'F':
-                newi2 = new ImageIcon("forrest.jpg");
-                jButton7.setIcon(newi2);
-                break;
-            case 'M':
-                newi2 = new ImageIcon("mountains.jpg");
-                jButton7.setIcon(newi2);
-                break;
-            case 'T':
-                newi2 = new ImageIcon("treasure.jpg");
-                jButton7.setIcon(newi2);
-                break;
-            case 'e':
-                jTextArea1.append("You cannot move farther South!\n");
-                break;        
         }
         
         System.out.println("Returned Terrrain: " + newTerrain);
@@ -788,27 +769,17 @@ public class GUI_Frame extends javax.swing.JFrame {
                 
         char newTerrain= map.moveEast();
         ImageIcon newi2;
-        switch(newTerrain)
+        
+        String type = terrainType(newTerrain);
+        
+        if(type.equals("error"))
         {
-            case 'G':
-                newi2 = new ImageIcon("tallgrass.jpg");
+            jTextArea1.append("You cannot move farther East!\n");
+        }
+        else
+        {
+            newi2 = new ImageIcon(type);
                 jButton7.setIcon(newi2);
-                break;
-            case 'F':
-                newi2 = new ImageIcon("forrest.jpg");
-                jButton7.setIcon(newi2);
-                break;
-            case 'M':
-                newi2 = new ImageIcon("mountains.jpg");
-                jButton7.setIcon(newi2);
-                break;
-            case 'T':
-                newi2 = new ImageIcon("treasure.jpg");
-                jButton7.setIcon(newi2);
-                break;
-            case 'e':
-                jTextArea1.append("You cannot move farther East!\n");
-                break;        
         }
         
         System.out.println("Returned Terrrain: " + newTerrain);
@@ -822,27 +793,17 @@ public class GUI_Frame extends javax.swing.JFrame {
         
         char newTerrain= map.moveWest();
         ImageIcon newi2;
-        switch(newTerrain)
+        
+        String type = terrainType(newTerrain);
+        
+        if(type.equals("error"))
         {
-            case 'G':
-                newi2 = new ImageIcon("tallgrass.jpg");
+            jTextArea1.append("You cannot move farther West!\n");
+        }
+        else
+        {
+            newi2 = new ImageIcon(type);
                 jButton7.setIcon(newi2);
-                break;
-            case 'F':
-                newi2 = new ImageIcon("forrest.jpg");
-                jButton7.setIcon(newi2);
-                break;
-            case 'M':
-                newi2 = new ImageIcon("mountains.jpg");
-                jButton7.setIcon(newi2);
-                break;
-            case 'T':
-                newi2 = new ImageIcon("treasure.jpg");
-                jButton7.setIcon(newi2);
-                break;
-            case 'e':
-                jTextArea1.append("You cannot move farther West!\n");
-                break;        
         }
         
         System.out.println("Returned Terrrain: " + newTerrain);
@@ -887,12 +848,19 @@ public class GUI_Frame extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the form 
         java.awt.EventQueue.invokeLater(() -> {
             new GUI_Frame().setVisible(true);
             
         });
         
+        */
+        
+        //Initialize Buttons
+        //startGame();
+        
+        //Starts the Graphic Window
+        runGUI();
 
         
        
@@ -946,18 +914,18 @@ public class GUI_Frame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private static javax.swing.JButton jButton1;
+    private static javax.swing.JButton jButton10;
+    private static javax.swing.JButton jButton11;
+    private static javax.swing.JButton jButton12;
+    private static javax.swing.JButton jButton2;
+    private static javax.swing.JButton jButton3;
+    private static javax.swing.JButton jButton4;
+    private static javax.swing.JButton jButton5;
+    private static javax.swing.JButton jButton6;
+    private static javax.swing.JButton jButton7;
+    private static javax.swing.JButton jButton8;
+    private static javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -973,34 +941,36 @@ public class GUI_Frame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private static javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private static javax.swing.JTextArea jTextArea1;
+    private static javax.swing.JTextField jTextField1;
+    private static javax.swing.JTextField jTextField2;
+    private static javax.swing.JTextField jTextField3;
+    private static javax.swing.JTextField jTextField4;
+    private static javax.swing.JTextField jTextField5;
+    private static javax.swing.JTextField jTextField6;
+    private static javax.swing.JTextField jTextField7;
+    private static javax.swing.JTextField jTextField8;
+    private static javax.swing.JTextField jTextField9;
     // End of variables declaration                   
     
-    Random num = new Random();
-    HeroClass newHero = new HeroClass();
+    static Random num = new Random();
+    static HeroClass newHero = new HeroClass();
     int eType = num.nextInt(2) + 1;
     //int eType = 3;
     //EnemyClass newEnemy = new EnemyClass(eType);       //Random Enenmy
-    EnemyClass newEnemy;
+    static EnemyClass newEnemy;
     EnemyClass imp = new EnemyClass(1);                  //Test the Imp Enemy
     EnemyClass wolf = new EnemyClass(2);                 //Test the Wolf Enemy
     EnemyClass ogre = new EnemyClass(3);                 //Test the Ogre Enemy
-    int turnCounter;
-    int terrain;// = num.nextInt(2) + 1;
-    boolean attacked = false;
-    MapBuilder map = new MapBuilder();
-    boolean showINV = false;
+    static int turnCounter;
+    static int terrain;// = num.nextInt(2) + 1;
+    static boolean attacked = false;
+    static MapBuilder map = new MapBuilder();
+    static boolean showINV = false;
+    static boolean hasKey = false;
+    static boolean moveHold = false;
     
     
     /*
@@ -1012,4 +982,100 @@ public class GUI_Frame extends javax.swing.JFrame {
     }
     
     */
+    
+    public static void runGUI()
+    {
+        //startGame();
+        
+        java.awt.EventQueue.invokeLater(() -> {
+            new GUI_Frame().setVisible(true);
+            
+            startGame();
+            
+        });
+        
+        
+    }
+    
+    public static void startGame()
+    {
+        String tType = "";
+        
+        jPanel3.setVisible(showINV);
+        jButton12.setVisible(hasKey);
+        
+        map.printMap();             //Print map before change
+        
+        //map.setPost(tempX, tempY);  //Set starting position
+        map.setPost(2,2);
+        //terrain = map.getTerrain(6, 6);
+        terrain = map.getTerrain();
+        
+        System.out.println("Terrain Set.");
+        
+        map.printMap(); 
+        
+        //int eStartHP = newEnemy.getHP();
+        int hStartHP = newHero.getHP();
+        
+        String name = newHero.getName();
+        int hp = newHero.getHP();
+        int exp = newHero.getExp();
+        int expNeeded = newHero.getLevelUp();
+        
+        //String eName = newEnemy.getName();
+        //int eHP = newEnemy.getHP();
+        
+        jTextField8.setText(String.valueOf(name));
+        jTextField1.setText(String.valueOf(hp));
+        jTextField2.setText(String.valueOf(exp));
+        jTextField3.setText(String.valueOf(expNeeded));
+        jTextField6.setText(String.valueOf(newHero.getPotionCount()));
+        
+        //jTextField7.setText(String.valueOf(eName));
+        //jTextField4.setText(String.valueOf(eHP));
+        
+        ImageIcon newi2;// = new ImageIcon();
+        tType = terrainType((char) terrain);
+        
+        
+        
+        if(tType.equals("error"))
+        {
+            jTextArea1.append("ERROR setting intial terrain!");
+        }
+        else
+        {
+            newi2 = new ImageIcon(tType);
+                jButton7.setIcon(newi2);
+        }
+        
+    }
+            
+    public static String terrainType(char t)
+    {
+        String fileName = "";
+        
+        switch(t)
+        {
+            case 'G':
+                //newi2 = new ImageIcon("tallgrass.jpg");
+                //jButton7.setIcon(newi2);
+                fileName = "tallgrass.jpg";
+                break;
+            case 'F':
+                fileName= "forrest.jpg";
+                break;
+            case 'M':
+                fileName = "mountains.jpg";
+                break;
+            case 'T':
+                fileName = "treasure.jpg";
+                break;
+            case 'e':
+                fileName = "Error";
+                break;        
+        }
+        return fileName;
+    }
 }
