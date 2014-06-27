@@ -39,22 +39,23 @@ public class GUI_Frame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton6 = new javax.swing.JButton();
@@ -84,10 +85,6 @@ public class GUI_Frame extends javax.swing.JFrame {
 
         jLabel3.setText("To Level Up:");
 
-        jLabel4.setText("Name:");
-
-        jLabel5.setText("Hit Points");
-
         jLabel8.setText("Hero Name:");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -110,6 +107,14 @@ public class GUI_Frame extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setText("Potions");
+
+        jLabel9.setText("Gold");
+
+        jLabel4.setText("Name:");
+
+        jLabel5.setText("Hit Points");
+
         jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,20 +122,55 @@ public class GUI_Frame extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setText("Potions");
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
+        );
 
-        jLabel9.setText("Gold");
+        jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel4, jLabel5});
+
+        jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextField4, jTextField7});
+
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel9)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -141,8 +181,6 @@ public class GUI_Frame extends javax.swing.JFrame {
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel8)
                                     .addComponent(jLabel6)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
                                     .addComponent(jLabel7))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -150,8 +188,6 @@ public class GUI_Frame extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(14, 14, 14)
@@ -160,16 +196,13 @@ public class GUI_Frame extends javax.swing.JFrame {
                                             .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(0, 0, Short.MAX_VALUE)))))
-                        .addGap(14, 14, 14)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addGap(74, 74, 74))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 10, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel1, jLabel2, jLabel3, jLabel6, jLabel7, jLabel8, jLabel9});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel4, jLabel5});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextField4, jTextField7});
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextField1, jTextField2, jTextField3, jTextField5, jTextField6, jTextField8, jTextField9});
 
@@ -203,18 +236,9 @@ public class GUI_Frame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTextArea1.setEditable(false);
@@ -390,10 +414,6 @@ public class GUI_Frame extends javax.swing.JFrame {
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(73, 73, 73)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -405,7 +425,11 @@ public class GUI_Frame extends javax.swing.JFrame {
                                     .addComponent(jButton10)
                                     .addComponent(jButton6))
                                 .addGap(30, 30, 30)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton10, jButton6});
@@ -443,25 +467,43 @@ public class GUI_Frame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-        
-        char newTerrain= map.moveNorth();
-        
-        String type = terrainType(newTerrain);
-        ImageIcon newi2;
-        
-                
-        if(type.equals("error"))
+        if(moveHold == false)
         {
-            jTextArea1.append("You cannot move farther North!\n");
+            char newTerrain= map.moveNorth();
+
+            String type = terrainType(newTerrain);
+            ImageIcon newi2;
+
+
+
+            if((type.toLowerCase()).equals("error"))
+            {
+                jTextArea1.append("You cannot move farther North!\n");
+            }
+            else
+            {
+                newi2 = new ImageIcon(type);
+                    jButton7.setIcon(newi2);
+            }
+
+            System.out.println("Returned Terrrain: " + newTerrain);
+            map.printMap();
+            checkAttack();
         }
         else
         {
-            newi2 = new ImageIcon(type);
-                jButton7.setIcon(newi2);
+            jTextArea1.append("You have been attacked and cannot move.\n");
         }
         
-        System.out.println("Returned Terrrain: " + newTerrain);
-        map.printMap();
+        if(attacked)
+        {
+            //Do attack stuff
+            moveHold = true;
+            jTextArea1.append("You have been attacked!\n");
+            
+            attackGame();
+            
+        }
 
     }                                        
 
@@ -503,7 +545,8 @@ public class GUI_Frame extends javax.swing.JFrame {
         
         //eType = CreateEnemy();
         System.out.println("Random enemy number: " + eType);
-        
+       
+        /*
         if(eType == 1)
         {
             newi = new ImageIcon("impguy.jpg");
@@ -522,51 +565,12 @@ public class GUI_Frame extends javax.swing.JFrame {
             newEnemy = ogre;
             jButton5.setIcon(newi);            
         }
-        
-        switch(terrain)
-        {
-            case 'G':
-                newi2 = new ImageIcon("tallgrass.jpg");
-                jButton7.setIcon(newi2);
-                break;
-            case 'F':
-                newi2 = new ImageIcon("forrest.jpg");
-                jButton7.setIcon(newi2);
-                break;
-            case 'M':
-                newi2 = new ImageIcon("mountains.jpg");
-                jButton7.setIcon(newi2);
-                break;
-            case 'T':
-                newi2 = new ImageIcon("treasure.jpg");
-                jButton7.setIcon(newi2);
-                break;
-        }
-        
-        
-        /*
-        int eStartHP = newEnemy.getHP();
-        int hStartHP = newHero.getHP();
-        
-        String name = newHero.getName();
-        int hp = newHero.getHP();
-        int exp = newHero.getExp();
-        int expNeeded = newHero.getLevelUp();
-        
-        String eName = newEnemy.getName();
-        int eHP = newEnemy.getHP();
-        
-        jTextField8.setText(String.valueOf(name));
-        jTextField1.setText(String.valueOf(hp));
-        jTextField2.setText(String.valueOf(exp));
-        jTextField3.setText(String.valueOf(expNeeded));
-        jTextField6.setText(String.valueOf(newHero.getPotionCount()));
-        
-        jTextField7.setText(String.valueOf(eName));
-        jTextField4.setText(String.valueOf(eHP));
         */
-        turnCounter = 0;
-            //Print map with Player in field.
+        
+        
+        
+        
+        
     }                                        
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
@@ -742,23 +746,40 @@ public class GUI_Frame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         //Move South Button
-        
-        char newTerrain= map.moveSouth();
-        ImageIcon newi2;
-       String type = terrainType(newTerrain);
-        
-        if(type.equals("error"))
+        if(moveHold == false)
         {
-            jTextArea1.append("You cannot move farther South!\n");
+            char newTerrain= map.moveSouth();
+            ImageIcon newi2;
+            String type = terrainType(newTerrain);
+
+            if((type.toLowerCase()).equals("error"))
+            {
+                jTextArea1.append("You cannot move farther South!\n");
+            }
+            else
+            {
+                newi2 = new ImageIcon(type);
+                    jButton7.setIcon(newi2);
+            }
+
+            System.out.println("Returned Terrrain: " + newTerrain);
+            map.printMap();
+            checkAttack();
         }
         else
         {
-            newi2 = new ImageIcon(type);
-                jButton7.setIcon(newi2);
+            jTextArea1.append("You have been attacked and cannot move.\n");
         }
         
-        System.out.println("Returned Terrrain: " + newTerrain);
-        map.printMap();
+        if(attacked)
+        {
+            //Do attack stuff
+            moveHold = true;
+            jTextArea1.append("You have been attacked!\n");
+            
+            attackGame();
+            
+        }
         
     }                                        
 
@@ -766,48 +787,82 @@ public class GUI_Frame extends javax.swing.JFrame {
         // TODO add your handling code here:
         // Move East Button
         
-                
-        char newTerrain= map.moveEast();
-        ImageIcon newi2;
-        
-        String type = terrainType(newTerrain);
-        
-        if(type.equals("error"))
+        if(moveHold == false)   
         {
-            jTextArea1.append("You cannot move farther East!\n");
+            char newTerrain= map.moveEast();
+            ImageIcon newi2;
+
+            String type = terrainType(newTerrain);
+
+            if((type.toLowerCase()).equals("error"))
+            {
+                jTextArea1.append("You cannot move farther East!\n");
+            }
+            else
+            {
+                newi2 = new ImageIcon(type);
+                    jButton7.setIcon(newi2);
+            }
+
+            System.out.println("Returned Terrrain: " + newTerrain);
+            map.printMap();
+            checkAttack();
         }
         else
         {
-            newi2 = new ImageIcon(type);
-                jButton7.setIcon(newi2);
+            jTextArea1.append("You have been attacked and cannot move.\n");
         }
         
-        System.out.println("Returned Terrrain: " + newTerrain);
-        map.printMap();
+        if(attacked)
+        {
+            //Do attack stuff
+            moveHold = true;
+            jTextArea1.append("You have been attacked!\n");
+            
+            attackGame();
+            
+        }
 
     }                                        
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
         // Move West Button
-        
-        char newTerrain= map.moveWest();
-        ImageIcon newi2;
-        
-        String type = terrainType(newTerrain);
-        
-        if(type.equals("error"))
+        if(moveHold == false)
         {
-            jTextArea1.append("You cannot move farther West!\n");
+            char newTerrain= map.moveWest();
+            ImageIcon newi2;
+
+            String type = terrainType(newTerrain);
+
+            if((type.toLowerCase()).equals("error"))
+            {
+                jTextArea1.append("You cannot move farther West!\n");
+            }
+            else
+            {
+                newi2 = new ImageIcon(type);
+                    jButton7.setIcon(newi2);
+            }
+
+            System.out.println("Returned Terrrain: " + newTerrain);
+            map.printMap();
+            checkAttack();
         }
         else
         {
-            newi2 = new ImageIcon(type);
-                jButton7.setIcon(newi2);
+            jTextArea1.append("You have been attacked and cannot move.\n");
         }
         
-        System.out.println("Returned Terrrain: " + newTerrain);
-        map.printMap();
+        if(attacked)
+        {
+            //Do attack stuff
+            moveHold = true;
+            jTextArea1.append("You have been attacked!\n");
+            
+            attackGame();
+            
+        }
     }                                        
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {                                          
@@ -862,56 +917,8 @@ public class GUI_Frame extends javax.swing.JFrame {
         //Starts the Graphic Window
         runGUI();
 
-        
-       
-        
-        
-
-        
-        /*
-        int i = 1;
-        int j = 0;
-        int random = 0;
-        char terrain = 'a';
-        String move = "a";
-        char [][] terrainMap = new char [8][8];
-        Scanner input = new Scanner(System.in);
-        int enemyType;
-        int attacked;
-        
-        //Set up Terrain Map
-        
-        
-        char grass = 'G';
-        char water = 'W';
-        char mountain = 'M';
-       
-        //Testing Enemy and Hero Creation Classes and methods.
-        
-        Random numGen = new Random();
-        
-        EnemyClass newEnemy = new EnemyClass(enemyType = (numGen.nextInt(3)+ 1));
-        
-        //System.out.println("Random Number: " + enemyType);
-        
-        newEnemy.printEnemy(newEnemy);
-        
-        HeroClass newHero = new HeroClass();
-        
-
-        
-        /*newHero.printHero();
-        
-        newHero.addEXP(28);
-        newHero.printHero();
-        
-        newHero.addEXP(30);
-        newHero.printHero();
-        
-        newHero.addEXP(17);
-        newHero.printHero();
-        */
-    }
+                
+        }
 
     // Variables declaration - do not modify                     
     private static javax.swing.JButton jButton1;
@@ -942,6 +949,7 @@ public class GUI_Frame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private static javax.swing.JPanel jPanel3;
+    private static javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private static javax.swing.JTextArea jTextArea1;
     private static javax.swing.JTextField jTextField1;
@@ -957,13 +965,13 @@ public class GUI_Frame extends javax.swing.JFrame {
     
     static Random num = new Random();
     static HeroClass newHero = new HeroClass();
-    int eType = num.nextInt(2) + 1;
+    static int eType;// = num.nextInt(2) + 1;
     //int eType = 3;
     //EnemyClass newEnemy = new EnemyClass(eType);       //Random Enenmy
     static EnemyClass newEnemy;
-    EnemyClass imp = new EnemyClass(1);                  //Test the Imp Enemy
-    EnemyClass wolf = new EnemyClass(2);                 //Test the Wolf Enemy
-    EnemyClass ogre = new EnemyClass(3);                 //Test the Ogre Enemy
+    //EnemyClass imp = new EnemyClass(1);                  //Test the Imp Enemy
+    //EnemyClass wolf = new EnemyClass(2);                 //Test the Wolf Enemy
+    //EnemyClass ogre = new EnemyClass(3);                 //Test the Ogre Enemy
     static int turnCounter;
     static int terrain;// = num.nextInt(2) + 1;
     static boolean attacked = false;
@@ -971,17 +979,41 @@ public class GUI_Frame extends javax.swing.JFrame {
     static boolean showINV = false;
     static boolean hasKey = false;
     static boolean moveHold = false;
+    static boolean hasMoved = false;
     
     
-    /*
-    public int CreateEnemy()
+    
+    public static int CreateEnemy()
     {
         eType = num.nextInt(2) + 1;
         EnemyClass newEnemy = new EnemyClass(eType);
         return eType;
     }
     
-    */
+    public static void setEnemyPic(int i)
+    {
+        ImageIcon pic;
+        String eName = "";
+        
+        switch(i)
+        {
+            case 1:
+                eName = "impguy.jpg";
+                break;
+            case 2:
+                eName = "wolfguy.jpg";
+                break;
+            case 3:
+                eName = "ogreguy.jpg";
+                break;
+        }
+        
+        pic = new ImageIcon(eName);
+        jButton5.setIcon(pic);
+        
+    }
+    
+    
     
     public static void runGUI()
     {
@@ -996,6 +1028,7 @@ public class GUI_Frame extends javax.swing.JFrame {
         
         
     }
+    
     
     public static void startGame()
     {
@@ -1031,6 +1064,10 @@ public class GUI_Frame extends javax.swing.JFrame {
         jTextField2.setText(String.valueOf(exp));
         jTextField3.setText(String.valueOf(expNeeded));
         jTextField6.setText(String.valueOf(newHero.getPotionCount()));
+        
+        jPanel4.setVisible(false);
+        moveHold = false;
+        attacked = false;
         
         //jTextField7.setText(String.valueOf(eName));
         //jTextField4.setText(String.valueOf(eHP));
@@ -1077,5 +1114,49 @@ public class GUI_Frame extends javax.swing.JFrame {
                 break;        
         }
         return fileName;
+    }
+    
+    /**
+     *
+     */
+    public static void checkAttack()
+    {
+        int check = num.nextInt(99) +1;
+        System.out.println("Generated number: " + check);
+        if(check <= 60)
+        {
+            attacked = true;
+        }
+        
+    }
+    
+    public static void attackGame()
+    {
+        jPanel4.setVisible(true);
+        
+        int enemyNum = num.nextInt(99) + 1;
+        int enemyNum2;
+        
+        if(enemyNum <= 60)
+        {
+            //Create Imp enemey
+            enemyNum2 = 1;
+            System.out.println("Creating Imp.");
+        }
+        else if(enemyNum > 60 && enemyNum <= 93)
+        {
+            //Create Wolf enemy
+            enemyNum2 = 2;
+            System.out.println("Creating Wolf");
+        }
+        else
+        {
+            //Create Ogre enemy
+            enemyNum2 = 3;
+            System.out.println("Creating Ogre");
+        }
+        
+        newEnemy = new EnemyClass(enemyNum2);
+       
     }
 }
