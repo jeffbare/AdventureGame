@@ -29,18 +29,21 @@ public class HeroClass {
     {
         String tempName;
         Scanner input = new Scanner(System.in);
+        /*
         System.out.println("Please enter the name of your Hero: ");
         tempName = input.next();
         int length = tempName.length();
-        if (length < 4)
+        if (length < 6)
         {
             //Do Nothing
         }
         else
         {
-        tempName = tempName.substring(0,4);
+            tempName = tempName.substring(0,6);
         }
-        name = tempName.toUpperCase();
+                */
+        name = "Bilbo";
+        //name = tempName.toUpperCase();
         maxHP = 40;
         currentHP = maxHP;
         attackPower = 10;
@@ -158,12 +161,16 @@ public class HeroClass {
     {
         
         int healAmount = 0;
+        int temp = 0;
+        double temp1;
         int remainingPots = getPotionCount();
         Random num = new Random();
         //System.out.println("Starting UsePotion Method.");
         if(remainingPots > 0)
         {
-            healAmount = num.nextInt(8) + 5;
+            temp1 = maxHP * .4;
+            temp = (int)(temp1);
+            healAmount = num.nextInt(temp) + 5;
             decreasePotionCount();
         }
         else
