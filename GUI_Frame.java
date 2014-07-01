@@ -504,6 +504,8 @@ public class GUI_Frame extends javax.swing.JFrame {
             attackGame();
             
         }
+        
+        checkTreasure();
 
     }                                        
 
@@ -721,11 +723,15 @@ public class GUI_Frame extends javax.swing.JFrame {
             jTextArea1.append("The enemy is dead!\n");
             jTextArea1.append("You gained " + newEnemy.getExp() + " EXP.\n");
             
-            if(newEnemy.keyHolder())
+            if(newEnemy.keyCheck() && hasKey == false)
             {
+                jTextArea1.append("This enemy is holding a key.\n");
                 newHero.foundKey();
                 jButton12.setVisible(true);
             }
+            
+            attacked = false;
+            moveHold = false;
         }
  
         
@@ -778,9 +784,9 @@ public class GUI_Frame extends javax.swing.JFrame {
             jTextArea1.append("You have been attacked!\n");
             
             attackGame();
-            
         }
         
+        checkTreasure();
     }                                        
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
@@ -822,6 +828,8 @@ public class GUI_Frame extends javax.swing.JFrame {
             attackGame();
             
         }
+        
+        checkTreasure();
 
     }                                        
 
@@ -860,9 +868,10 @@ public class GUI_Frame extends javax.swing.JFrame {
             moveHold = true;
             jTextArea1.append("You have been attacked!\n");
             
-            attackGame();
-            
+            attackGame();            
         }
+        
+        checkTreasure();
     }                                        
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {                                          
@@ -1125,6 +1134,7 @@ public class GUI_Frame extends javax.swing.JFrame {
         System.out.println("Generated number: " + check);
         if(check <= 60)
         {
+            moveHold = true;
             attacked = true;
         }
         
@@ -1157,6 +1167,48 @@ public class GUI_Frame extends javax.swing.JFrame {
         }
         
         newEnemy = new EnemyClass(enemyNum2);
-       
+        
+        System.out.println("Beginning Enemy Setup");
+        setEnemy(newEnemy);
+        System.out.println("Enemy Set up");
+        
     }
+        
+        public static void setEnemy(EnemyClass enemy)
+        {
+            //Method for setting up the enemy on the screen
+            String eName;
+            int hp;
+            ImageIcon icon = new ImageIcon(enemy.getLogo());
+            
+            
+            jPanel4.setVisible(true);
+            
+            eName = enemy.getName();
+            hp = enemy.getHP();
+            
+            jTextField7.setText(eName);
+            jTextField4.setText(String.valueOf(hp));
+            jButton5.setIcon(icon);
+            
+        }
+        
+        public void checkTreasure()
+        {
+            //Used to check if the Hero has found the key and is at the treasure
+            //chest, this would end the game as it is currently set up.
+            if(hasKey && (map.getTerrain() == 'T'))
+            {
+                moveHold = true;
+                int gold = num.nextInt(1000) + 1;
+                
+                jTextArea1.append("You have found the treasure chest,\n");
+                jTextArea1.append("and claim all of it's contents!\n");
+                jTextArea1.append("You found " + gold + " gold in the chest.\n");
+                jTextField9.setText(String.valueOf(gold));
+                
+                
+            }
+        }
+       
 }
