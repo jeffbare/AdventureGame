@@ -65,6 +65,7 @@ public class EnemyClass {
                 break;
             case(3):
                 name = "Ogre";
+                lName = "ogreguy.jpg";
                 hp = 50;
                 atk = 10;
                 def = 10;
@@ -84,7 +85,7 @@ public class EnemyClass {
         attackPower = atk;
         defensePower = def;
         expGained = exp;
-        key = false;
+        keyHolder();
 
         
     }
@@ -199,7 +200,8 @@ public class EnemyClass {
     {
         return expGained;
     }
-
+    
+    
     public void printEnemy(EnemyClass e)
     {
         //String test;
@@ -230,11 +232,9 @@ public class EnemyClass {
     }
 
     
-    public boolean keyHolder()
+    public void keyHolder()
     {
-        boolean x = false;
-        if(key == false)
-        {
+
 
             Random numGen = new Random();
             int num = numGen.nextInt(99) + 1;
@@ -242,10 +242,16 @@ public class EnemyClass {
             if(num <= 15)
             {
                 key = true;
-                x = true;
             }
-        }
+            else{
+                key = false;
+            }
+  
                  
-        return x;
+    }
+    
+    public boolean keyCheck()
+    {
+        return key;
     }
 }
